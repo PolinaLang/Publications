@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Create publication{% endblock %}
+
+{% block content %}
+    <h2>Create publication</h2>
+
+    <p style="color: red">{{ error }}</p>
+
+    <form method="post" action="/publish">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="publication name"/>
+        <br><br>
+        <input type="password" name="password" placeholder="enter password"/>
+        <br><br>
+        <textarea name="text" placeholder="publication text"></textarea>
+        <br>
+        <input type="submit" value="Publish"/>
+    </form>
+
+{% endblock %}

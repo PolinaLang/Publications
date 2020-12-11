@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Publications{% endblock %}
+
+{% block content %}
+    <h2>Publications list</h2>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+        </tr>
+
+        {% for publication in publications %}
+        <tr>
+            <td><a href="/publications/{{ publication.id }}">{{ publication.name }}</a></td>
+            <td>{{ publication.date }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}
